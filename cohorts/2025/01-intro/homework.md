@@ -13,8 +13,8 @@ Run Elastic Search 8.17.6, and get the cluster information. If you run it on loc
 curl localhost:9200
 ```
 
-What's the `version.build_hash` value?
-
+What's the `version.build_hash` value?  
+`42f05b9372a9a4a470db3b52817899b99a76ee73`
 
 ## Getting the data
 
@@ -56,7 +56,7 @@ pip install elasticsearch
 Which function do you use for adding your data to elastic?
 
 * `insert`
-* `index`
+* [x] `index`
 * `put`
 * `add`
 
@@ -72,7 +72,7 @@ What's the score for the top ranking result?
 
 * 84.50
 * 64.50
-* 44.50
+* [x] 44.50
 * 24.50
 
 Look at the `_score` field.
@@ -86,7 +86,7 @@ This time we are only interested in questions from `machine-learning-zoomcamp`.
 Return 3 results. What's the 3rd question returned by the search engine?
 
 * How do I debug a docker container?
-* How do I copy files from a different folder into docker container’s working directory?
+* [x] How do I copy files from a different folder into docker container’s working directory?
 * How do Lambda container images work?
 * How can I annotate a graph?
 
@@ -120,7 +120,7 @@ CONTEXT:
 What's the length of the resulting prompt? (use the `len` function)
 
 * 946
-* 1446
+* [x] 1446
 * 1946
 * 2446
 
@@ -145,7 +145,7 @@ Use the `encode` function. How many tokens does our prompt have?
 
 * 120
 * 220
-* 320
+* [x] 320
 * 420
 
 Note: to decode back a token into a word, you can use the `decode_single_token_bytes` function:
