@@ -1,4 +1,4 @@
-## Homework: Vector Search [DRAFT]
+## Homework: Vector Search
 
 In this homework, we will learn more about vector search
 and embedding. Like in the module, we will use Qdrant and
@@ -47,7 +47,7 @@ What's the minimal value in this array?
 
 The vectors that our embedding model returns are already normalized: their length is 1.0.
 
-You can chech that by using the `norm` function:
+You can check that by using the `norm` function:
 
 ```python
 import numpy as np
