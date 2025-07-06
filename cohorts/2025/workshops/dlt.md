@@ -22,8 +22,8 @@ Let's install dlt with Qdrant support and Qdrant client:
 pip install -q "dlt[qdrant]" "qdrant-client[fastembed]"
 ```
 
-What's the version of dlt that you installed?
-
+What's the version of dlt that you installed?  
+`1.12.3`
 
 ## dlt Resourse
 
@@ -76,17 +76,18 @@ load_info = pipeline.run(zoomcamp_data())
 print(pipeline.last_trace)
 ```
 
-How many rows were inserted into the `zoomcamp_data` collection?
+How many rows were inserted into the `zoomcamp_data` collection?  
+`948`
 
 Look for `"Normalized data for the following tables:"` in the trace output.
 
 ## Question 3. Embeddings
 
-When inserting the data, an embedding model was used. Which one?
+When inserting the data, an embedding model was used. Which one?  
+`fast-bge-small-en`
 
 You can find this out by inspecting the `meta.json` file created
 in the target folder.
-
 
 
 ## Submit the results
