@@ -1,3 +1,4 @@
+db.qdrant/
 .ipynb_checkpoints/
 __pycache__/
 .venv
