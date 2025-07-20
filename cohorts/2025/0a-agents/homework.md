@@ -54,7 +54,22 @@ get_weather_tool = {
 }
 ```
 
-What did you put in `TODO3`?
+```python
+get_weather_tool = {
+    "type": "function",
+    "name": "get_weather",
+    "description": "This function helps to get the weather for a given city name from in-memory dictionary",
+    "parameters": {
+        "type": "object",
+        "properties": {"city": {"type": "string", "description": "name of the city"}},
+        "required": [True],
+        "additionalProperties": False,
+    },
+}
+```
+
+[x] What did you put in `TODO3`?  
+`city`
 
 ## Testing it (Optional)
 
@@ -87,7 +102,26 @@ def set_weather(city: str, temp: float) -> None:
 
 Now let's write a description for it.
 
-What did you write?
+```python
+set_weather_tool = {
+    "type": "function",
+    "name": "set_weather",
+    "description": "This function helps to set the weather for a given city name from in-memory dictionary, and a given temperature float number",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "city": {"type": "string", "description": "name of the city"},
+            "temp": {"type": "float", "description": "temperature value"},
+        },
+        "required": [True],
+        "additionalProperties": False,
+    },
+}
+```
+
+[x] What did you write?  
+`This function helps to set the weather for a given city name from in-memory dictionary, and a given temperature float number`
+
 
 Optionally, you can test it after adding this function.
 
@@ -109,7 +143,8 @@ Let's install a library for MCP - [FastMCP](https://github.com/jlowin/fastmcp):
 pip install fastmcp
 ```
 
-What's the version of FastMCP you installed?
+[x] What's the version of FastMCP you installed?  
+`2.10.5`
 
 ## Q4. Simple MCP Server 
 
@@ -179,7 +214,8 @@ Look for a string that matches this template:
 Starting MCP server 'Demo 🚀' with transport '<TODO>'
 ```
 
-What do you have instead of `<TODO>`?
+[x] What do you have instead of `<TODO>`?  
+`stdio`
 
 ## Q5. Protocol
 
@@ -213,7 +249,8 @@ This is how we start communitcating with it:
     ```json
     {"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "<TODO>", "arguments": {<TODO>}}}
     ```
-- What did you get in response?
+- [x] What did you get in response?  
+`{"jsonrpc":"2.0","id":3,"result":{"content":[{"type":"text","text":"20.0"}],"structuredContent":{"result":20.0},"isError":false}}`
 
 ## Q6. Client
 
@@ -259,9 +296,10 @@ if __name__ == "__main__":
     test = asyncio.run(main())
 ```
 
-Copy the output with the available tools when
-filling in the homework form.
-
+[x] Copy the output with the available tools when filling in the homework form.
+```python
+tools = [Tool(name='get_weather', title=None, description='Retrieves the temperature for a specified city.\n\nParameters:\n    city (str): The name of the city for which to retrieve weather data.\n\nReturns:\n    float: The temperature associated with the city.', inputSchema={'properties': {'city': {'title': 'City', 'type': 'string'}}, 'required': ['city'], 'type': 'object'}, outputSchema={'properties': {'result': {'title': 'Result', 'type': 'number'}}, 'required': ['result'], 'title': '_WrappedResult', 'type': 'object', 'x-fastmcp-wrap-result': True}, annotations=None, meta=None), Tool(name='set_weather', title=None, description="Sets the temperature for a specified city.\n\nParameters:\n    city (str): The name of the city for which to set the weather data.\n    temp (float): The temperature to associate with the city.\n\nReturns:\n    str: A confirmation string 'OK' indicating successful update.", inputSchema={'properties': {'city': {'title': 'City', 'type': 'string'}, 'temp': {'title': 'Temp', 'type': 'number'}}, 'required': ['city', 'temp'], 'type': 'object'}, outputSchema=None, annotations=None, meta=None)]
+```
 
 ## Using tools from the MCP server (optional)
 
